@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-// import { MongoConnect } from "./libs/mongodb.js";
+import { MongoConnect } from "./libs/mongodb.js";
 // import apiRouter from "./routes/api-routes.js";
 // import { CreateHttpError } from "./services/utility-services.js";
 // import { CheckToken } from "./middleware/auth.js";
@@ -8,7 +8,7 @@ import cors from "cors";
 const SERVER_PORT = 9000;
 const app = express();
 
-// MongoConnect();
+MongoConnect();
 
 app.use(cors());
 app.use(express.json());
