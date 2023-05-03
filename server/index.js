@@ -13,9 +13,10 @@ MongoConnect();
 app.use(cors());
 app.use(express.json());
 // app.use(CheckToken);
-// app.use("/api", apiRouter);
+app.use("/api", apiRouter);
 app.get("*", (req, res, next) => res.status(500).send("TBA Prod app"));
 app.use("*", (req, res, next) => next(CreateHttpError(404, `Route not found: ${req.path}`)));
+
 app.use((err, req, res, next) => {
 	console.warn("path >>| ", req.path);
 	if (err.code === 404) err.message += req.path
