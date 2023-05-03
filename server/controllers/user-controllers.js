@@ -13,7 +13,7 @@ export const Login = async (req, res, next) => {
 export const List = async (req, res, next) => {
 	try {
 		const users = await User.find({}, { __v: 0, password: 0 }, { lean: true });
-		res.json({ users });
+		return res.json({ users });
 	} catch (err) {
 		next(err);
 	}

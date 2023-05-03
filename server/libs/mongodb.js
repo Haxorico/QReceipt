@@ -14,7 +14,7 @@ export const MongoConnect = async (dbName) => {
 		await mongoose.connect(`${DB_URL}${DB_PORT}/${dbName}`);
 		console.log(`connected to db at ${DB_URL}${DB_PORT}/${dbName}`);
 	} catch (err) {
-		console.log("mognodb error >>> ", err);
+		console.warn("mognodb error >>| ", err);
 		process.exit();
 	}
 };
