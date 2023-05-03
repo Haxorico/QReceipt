@@ -17,7 +17,7 @@ unumSchema.static("new", async function (name) {
 });
 
 unumSchema.static("clear", async function (name) {
-	this.deleteOne({ name });
+	await this.deleteOne({ name });
 });
 
 const Unum = mongoose.model("Unum", unumSchema);
